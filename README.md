@@ -2,7 +2,11 @@
 <p align="justify"> 
   <h2>Open Projects 2021</h2>
   </p>
-
+<p align="center">
+  <img src="https://github.com/crooknish/Smartwatch/blob/328de0d6db4d20f19190899e9200ea6b46cae17e/Images%20and%20Videos/Images/PCB%203D%20view.jpeg" height = "350px", width="400px"><br>
+  <i> Smartwatch PCB 3D Model </i>
+  </p>
+  
 ## Abstract  
 <p align="justify"> This smartwatch project largely deals with the exploration of what is Arduino and how it works. A Smartwatch functions both as a watch as well as a miniature size smart phone with limited features. Designing and simulating an Arduino based smartwatch requires a lot of knowledge about the hardware part. But this project was entirely designed and simulated in online mode using various softwares to draw the schematic and simulate it (Proteus), work on the PCB layout (Easy EDA) and finally do a casing for the smartwatch (solidworks).   
  </p>
@@ -10,11 +14,7 @@
 <p align="justify">
   This watch can be connected to mobile via Bluetooth and it can respond to the commands given via the mobile too. It can also monitor the notifications that we receive in our mobile and alert the user accordingly. Apart from this, it can also show the day-date-time information like a normal digital watch and can also show us the temperature of the medium in which it is kept.
  </p>  
-<p align="center">
-  <img src="https://github.com/crooknish/Smartwatch/blob/328de0d6db4d20f19190899e9200ea6b46cae17e/Images%20and%20Videos/Images/PCB%203D%20view.jpeg" height = "350px", width="400px"><br>
-  <i> Smartwatch PCB 3D Model </i>
-  </p>
-  
+
 
 ## Motivation
 <p align="justify">
@@ -22,15 +22,15 @@ This project mainly aimed to create a rough model of a smartwatch that will rese
   </p>
   <br>
 
-![workflow](https://github.com/crooknish/Smartwatch/blob/328de0d6db4d20f19190899e9200ea6b46cae17e/Images%20and%20Videos/Images/Workflow.jpeg)
+![workflow](https://github.com/crooknish/Smartwatch/blob/328de0d6db4d20f19190899e9200ea6b46cae17e/Images%20and%20Videos/Images/Workflow.jpeg "work flowchart")
 
 ## Mechanical Aspect of the Design
 <p align="justify"> 
-  For the smart watch, we made a case to protect it from external damage from scratches, any accidental drops or damage to its hardware by any means. It also makes it look good. As we are limited to work in this online environment, we have designed a virtual case in <b> Solidworks</b>.   
+  For the smart watch, we made a case to protect it from external damage from scratches, any accidental drops or damage to its hardware by any means. It also makes it look good. As we are limited to work in this online environment, we have designed a virtual case in <b> Solidworks</b>.<br>
 The case is a 51mm x 51mm x 20mm cuboid made of PVC. It is designed such that it has it has holes for the OLED pins to be attached as well as for the keys to be placed. Also, it has base which is also made of PVC and can be fastened with the case using screws. 
   </p>
 <p align="center"> 
-  <img src="https://github.com/crooknish/Smartwatch/blob/328de0d6db4d20f19190899e9200ea6b46cae17e/Images%20and%20Videos/Images/case.jpeg" > <br>
+  <img src="https://github.com/crooknish/Smartwatch/blob/328de0d6db4d20f19190899e9200ea6b46cae17e/Images%20and%20Videos/Images/case.jpeg" alt="3D casing"> <br>
   <i> 3D Case </i><br><br>
   <img src ="https://github.com/crooknish/Smartwatch/blob/19d6efc3654f7e7757a4fd50ef805bb6503ef1a1/Images%20and%20Videos/Images/Case-Front%20side.png" height ="300px" width ="300px" alt ="case-front side">  <img src ="https://github.com/crooknish/Smartwatch/blob/19d6efc3654f7e7757a4fd50ef805bb6503ef1a1/Images%20and%20Videos/Images/Case-Back%20side.png" height ="300px" width ="300px" alt ="case-back side">
   </p><br>
@@ -69,7 +69,7 @@ The case is a 51mm x 51mm x 20mm cuboid made of PVC. It is designed such that it
 #### 	Push Buttons
    - Used to power up and break the circuit enabling to switch between different Menu Bar
 
-![schematic in proteus](https://github.com/crooknish/Smartwatch/blob/328de0d6db4d20f19190899e9200ea6b46cae17e/Images%20and%20Videos/Images/smartwach_proteus_simulation.JPG)
+![schematic in proteus](https://github.com/crooknish/Smartwatch/blob/328de0d6db4d20f19190899e9200ea6b46cae17e/Images%20and%20Videos/Images/smartwach_proteus_simulation.JPG " Schematic in Proteus")
  <p align="center"> <i> Schematic in Proteus</i> </p>
  
 ### PCB Layout
@@ -108,10 +108,10 @@ The battery characteristics to be monitored include the detection of battery typ
 
 #### Secondary Battery - LiPo/Li-ion battery
 
-    -	High Cell Voltage (3.7V under Load)
-    -	Lightweight, High power Density
-    -	Output capability better than other (like- LEAD TYPE, NiMH, etc.)
-    -	Higher power to size ratio
+   -	High Cell Voltage (3.7V under Load)
+   -	Lightweight, High power Density
+   -	Output capability better than other (like- LEAD TYPE, NiMH, etc.)
+   -	Higher power to size ratio
    
 ## How to simulate smartwatch in proteus
   - Install proteus and arduino IDE and all the required libraries.
