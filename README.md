@@ -11,7 +11,7 @@
   This watch can be connected to mobile via Bluetooth and it can respond to the commands given via the mobile too. It can also monitor the notifications that we receive in our mobile and alert the user accordingly. Apart from this, it can also show the day-date-time information like a normal digital watch and can also show us the temperature of the medium in which it is kept.
  </p>  
 <p align="center">
-  <img src="https://github.com/crooknish/Smartwatch/blob/b9872868b3e2b396aa44f89e3450bc2ef973ca1a/Images%20and%20Videos/PCB%203D%20view.jpeg" height = "500px", width="500px"><br>
+  <img src="https://github.com/crooknish/Smartwatch/blob/328de0d6db4d20f19190899e9200ea6b46cae17e/Images%20and%20Videos/Images/PCB%203D%20view.jpeg" height = "500px", width="500px"><br>
   <i> PCB 3D Model </i>
   </p>
   
@@ -22,7 +22,17 @@ This project mainly aimed to create a rough model of a smartwatch that will rese
   </p>
   <br>
 
-![workflow](https://github.com/crooknish/Smartwatch/blob/de03d77899220ad73e6d6c49e93258564fbb5392/Images%20and%20Videos/Workflow.jpeg)
+![workflow](https://github.com/crooknish/Smartwatch/blob/328de0d6db4d20f19190899e9200ea6b46cae17e/Images%20and%20Videos/Images/Workflow.jpeg)
+
+## Mechanical Aspect of the Design
+<p align="justify"> 
+  For the smart watch, we made a case to protect it from external damage from scratches, any accidental drops or damage to its hardware by any means. It also makes it look good. As we are limited to work in this online environment, we have designed a virtual case in <b> Solidworks</b>.   
+The case is a 51mm x 51mm x 20mm cuboid made of PVC. It is designed such that it has it has holes for the OLED pins to be attached as well as for the keys to be placed. Also, it has base which is also made of PVC and can be fastened with the case using screws. 
+  </p>
+<p align="center"> 
+  <img src="https://github.com/crooknish/Smartwatch/blob/328de0d6db4d20f19190899e9200ea6b46cae17e/Images%20and%20Videos/Images/case.jpeg" > <br>
+  <i> 3D Case </i>
+  </p><br>
 
 ## Electronic Aspect of the Design
 ### Components used
@@ -57,7 +67,7 @@ This project mainly aimed to create a rough model of a smartwatch that will rese
 #### 	Push Buttons
    - Used to power up and break the circuit enabling to switch between different Menu Bar
 
-![schematic in proteus](https://github.com/crooknish/Smartwatch/blob/de03d77899220ad73e6d6c49e93258564fbb5392/Images%20and%20Videos/smartwach_proteus_simulation.JPG)
+![schematic in proteus](https://github.com/crooknish/Smartwatch/blob/328de0d6db4d20f19190899e9200ea6b46cae17e/Images%20and%20Videos/Images/smartwach_proteus_simulation.JPG)
  <p align="center"> <i> Schematic in Proteus</i> </p>
  
 ### PCB Layout
@@ -68,9 +78,9 @@ The next step is to design a PCB layout using the schematic. Here is where, usin
 After converting the schematic to PCB layout, the real task begins. Keeping the size of the watch in mind and placing all the components was really challenging. After designing the layout, the 2D and 3D views were projected to verify whether the components overlap or interfere with each other.  </p>
 
 <p align="center">
-  <img src="https://github.com/crooknish/Smartwatch/blob/de03d77899220ad73e6d6c49e93258564fbb5392/Images%20and%20Videos/PCB%20Layout.jpeg"></br>
+  <img src="https://github.com/crooknish/Smartwatch/blob/328de0d6db4d20f19190899e9200ea6b46cae17e/Images%20and%20Videos/Images/PCB%20Layout.jpeg"></br>
    <i> PCB Layout </i><br>
-  <img src="https://github.com/crooknish/Smartwatch/blob/de03d77899220ad73e6d6c49e93258564fbb5392/Images%20and%20Videos/PCB-Top%20view.png"></br>
+  <img src="https://github.com/crooknish/Smartwatch/blob/328de0d6db4d20f19190899e9200ea6b46cae17e/Images%20and%20Videos/Images/PCB-Top%20view.png"></br>
   <i> PCB Top view</i>
   </p>
 
@@ -100,14 +110,7 @@ The battery characteristics to be monitored include the detection of battery typ
     -	Lightweight, High power Density
     -	Output capability better than other (like- LEAD TYPE, NiMH, etc.)
     -	Higher power to size ratio
-    
-## Mechanical Aspect of the Design
-<p align="justify"> 
-  For the smart watch, we made a case to protect it from external damage from scratches, any accidental drops or damage to its hardware by any means. It also makes it look good. As we are limited to work in this online environment, we have designed a virtual case in <b> Solidworks</b>.   
-The case is a 51mm x 51mm x 20mm cuboid made of PVC. It is designed such that it has it has holes for the OLED pins to be attached as well as for the keys to be placed. Also, it has base which is also made of PVC and can be fastened with the case using screws. 
-  </p>
-
-![casing img](https://github.com/crooknish/Smartwatch/blob/3f2100be9ce8981b57f7867797f3ece374e26aba/Images%20and%20Videos/case.jpeg)
+   
 
 ## Cost Structure
 | Components  | Cost (in Rupees) |
