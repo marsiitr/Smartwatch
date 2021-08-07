@@ -11,8 +11,8 @@
   This watch can be connected to mobile via Bluetooth and it can respond to the commands given via the mobile too. It can also monitor the notifications that we receive in our mobile and alert the user accordingly. Apart from this, it can also show the day-date-time information like a normal digital watch and can also show us the temperature of the medium in which it is kept.
  </p>  
 <p align="center">
-  <img src="https://github.com/crooknish/Smartwatch/blob/328de0d6db4d20f19190899e9200ea6b46cae17e/Images%20and%20Videos/Images/PCB%203D%20view.jpeg" height = "500px", width="500px"><br>
-  <i> PCB 3D Model </i>
+  <img src="https://github.com/crooknish/Smartwatch/blob/328de0d6db4d20f19190899e9200ea6b46cae17e/Images%20and%20Videos/Images/PCB%203D%20view.jpeg" height = "350px", width="400px"><br>
+  <i> Smartwatch PCB 3D Model </i>
   </p>
   
 
@@ -31,8 +31,10 @@ The case is a 51mm x 51mm x 20mm cuboid made of PVC. It is designed such that it
   </p>
 <p align="center"> 
   <img src="https://github.com/crooknish/Smartwatch/blob/328de0d6db4d20f19190899e9200ea6b46cae17e/Images%20and%20Videos/Images/case.jpeg" > <br>
-  <i> 3D Case </i>
+  <i> 3D Case </i><br><br>
+  <img src ="https://github.com/crooknish/Smartwatch/blob/19d6efc3654f7e7757a4fd50ef805bb6503ef1a1/Images%20and%20Videos/Images/Case-Front%20side.png" height ="300px" width ="300px" alt ="case-front side">  <img src ="https://github.com/crooknish/Smartwatch/blob/19d6efc3654f7e7757a4fd50ef805bb6503ef1a1/Images%20and%20Videos/Images/Case-Back%20side.png" height ="300px" width ="300px" alt ="case-back side">
   </p><br>
+  
 
 ## Electronic Aspect of the Design
 ### Components used
@@ -79,9 +81,9 @@ After converting the schematic to PCB layout, the real task begins. Keeping the 
 
 <p align="center">
   <img src="https://github.com/crooknish/Smartwatch/blob/328de0d6db4d20f19190899e9200ea6b46cae17e/Images%20and%20Videos/Images/PCB%20Layout.jpeg"></br>
-   <i> PCB Layout </i><br>
-  <img src="https://github.com/crooknish/Smartwatch/blob/328de0d6db4d20f19190899e9200ea6b46cae17e/Images%20and%20Videos/Images/PCB-Top%20view.png"></br>
-  <i> PCB Top view</i>
+   <i> PCB Layout </i><br><br>
+  <img src="https://github.com/crooknish/Smartwatch/blob/328de0d6db4d20f19190899e9200ea6b46cae17e/Images%20and%20Videos/Images/PCB-Top%20view.png" height ="300px" width ="300px" alt="PCB top view">    <img src="https://github.com/crooknish/Smartwatch/blob/19d6efc3654f7e7757a4fd50ef805bb6503ef1a1/Images%20and%20Videos/Images/PCB%20-%20Bottom%20view.png" height ="300px" width ="300px" alt="PCB bottom view"><br>
+
   </p>
 
  
@@ -111,6 +113,12 @@ The battery characteristics to be monitored include the detection of battery typ
     -	Output capability better than other (like- LEAD TYPE, NiMH, etc.)
     -	Higher power to size ratio
    
+## How to simulate smartwatch in proteus
+  - Install proteus and arduino IDE and all the required libraries.
+  - Make the arrangement of all component according to the schematic.
+  - Copy the code kept in src folder to the arduino and compile it.
+  - Now copy the hex file location after compiling and paste it in edit component of arduino nano in Proteus.
+  - Now run the simulation.
 
 ## Cost Structure
 | Components  | Cost (in Rupees) |
