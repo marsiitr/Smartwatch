@@ -1,4 +1,3 @@
-
 #include <SPI.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
@@ -7,21 +6,18 @@
 #include <OneWire.h>
 #include <DallasTemperature.h>
 
-
 RTC_DS3231 rtc;
-char daysOfTheWeek[7][12] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
 #define SCREEN_WIDTH 128   
 #define SCREEN_HEIGHT 64 
-
 #define ONE_WIRE_BUS 8
 #define Pin1 3
 #define Pin2 6
 #define Pin3 5
-
 #define OLED_RESET 4
+
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
-  int buzzer = 11;
+  char daysOfTheWeek[7][12] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
   char Incoming_value = 0;
   float Celsius = 0;
   byte option = 0;
@@ -30,11 +26,10 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
   byte call,whatsapp,msg;
   uint8_t thisSec, thisMin, thisHour;
   byte sethr, setmin;
+  int buzzer = 11;
   
 OneWire oneWire(ONE_WIRE_BUS);
-
 DallasTemperature sensors(&oneWire);
-
 
 void setup() 
 {
@@ -67,65 +62,8 @@ void setup()
   display.setTextColor(WHITE, BLACK);
 }
 
-  //date and time function
-void showtime()
-{
-  // for rectangle
-  display.clearDisplay();
-  display.setTextSize(1);
-  display.setTextColor(BLACK,WHITE);
-  display.setCursor(20,0);
-  display.println("MARS Smartwatch");
-  display.drawRoundRect(2, 12, 126, 52, 8, WHITE);
-
-  //delay(2000);
-
-  DateTime now = rtc.now();  
-
-
-  //Date
-  display.setTextColor(WHITE);
-  display.setTextSize(1);
-  display.setCursor(8,15);
-  display.print(daysOfTheWeek[now.dayOfTheWeek()]);
-
-  
-    display.setTextSize(1);
-    display.setCursor(8,29);
-    display.print(now.day());
-    display.print("/");
-    display.print(now.month());
-    display.print("/");
-    display.setTextSize(1);
-    display.setCursor(44,29);
-    display.print(now.year(), DEC);
-
-
-  //Time
-  //char buffer [16];
-  
-  thisSec = now.second();
-  thisMin = now.minute();
-  thisHour = now.hour();
-  //sprintf (buffer, "%02d:%02d:%02d", thisHour, thisMin, thisSec);
-
-    display.setTextSize(2);
-    display.setCursor(8,44);
-    display.print(now.hour());
-    display.print(":");
-    display.print(now.minute());
-    display.print(":");
-    display.print(now.second());
-
-  display.display(); 
-  delay(3000);
-  display.clearDisplay();
-  display.display(); 
-}
-
-
-
  //Temperature function
+
 void temperature (){
    sensors.requestTemperatures();
       delay(100);
@@ -149,6 +87,7 @@ void temperature (){
 }
 
  //Menu
+
 void menu ()
 {
   display.clearDisplay();
@@ -169,6 +108,8 @@ void menu ()
 }
 
 //highlight options
+
+
 void highlight(int option){
   if(option == 1){
     display.clearDisplay();
@@ -226,6 +167,7 @@ void highlight(int option){
 }
 
 //Notification
+
 void notification(){
     display.clearDisplay();
   display.setTextSize(1);
@@ -251,6 +193,8 @@ void notification(){
 }
 
 void alarm(){
+  DisplaySetHourAll();
+  DisplaySetMinuteAll();
   display.setCursor(40,15);
   display.println("Alarm"); 
   display.drawRoundRect(2, 12, 126, 52, 8, WHITE);
@@ -264,16 +208,90 @@ void alarm(){
   display.print(setmin);
   display.setCursor(8,45);
   display.println("Alarm On");  
-   display.display();
+  display.display();
   display.display();
   delay(2000);
 }
+void DisplaySetHourAll()// Setting the alarm minutes
+{
+  while(digitalRead(Pin2)==HIGH){
+
+  display.clearDisplay();
+
+  if(digitalRead(Pin3)==LOW)
+  {
+    if(sethr==23)
+    {
+      sethr=0;
+    }
+    else
+    {
+      sethr=sethr+1;
+    }
+  }
+   if(digitalRead(Pin3)==LOW)
+  {
+    if(sethr==0)
+    {
+      sethr=23;
+    }
+    else
+    {
+      sethr=sethr-1;
+    }
+  }
+  display.setCursor(5, 8);
+  display.setTextSize(1);
+  display.print("Set HOUR Alarm:");
+  display.setCursor(10,24);
+  display.print(sethr,DEC);
+  display.display();
+ }
+ delay(200);
+}
+
+void DisplaySetMinuteAll()// Setting the alarm minutes
+ {
+  while(digitalRead(Pin2)==HIGH){ 
+
+  display.clearDisplay();
+  if(digitalRead(Pin3)==LOW)
+  {
+    if (setmin==59)
+    {
+      setmin=0;
+    }
+    else
+    {
+      setmin=setmin+1;
+    }
+  }
+   if(digitalRead(Pin3)==LOW)
+  {
+    if (setmin==0)
+    {
+      setmin=59;
+    }
+    else
+    {
+      setmin=setmin-1;
+    }
+  }
+  display.setCursor(5,8);
+  display.setTextSize(1);
+  display.print("Set MIN. Alarm:");
+  display.setCursor(5,24);
+  display.print(setmin,DEC);
+  display.display();
+ }
+ delay(200);
+}
 
 void buzz (){
-  tone(buzzer, 1000); // Send 1KHz sound signal...
-      delay(2000);        // ...for 2 sec
-      noTone(buzzer);     // Stop sound...
-      delay(1000);        // ...for 1 sec
+  tone(buzzer, 1000); // Send 1KHz sound signal
+      delay(2000);       
+      noTone(buzzer);     // Stop sound
+      delay(1000);       
 }
 
 void loop() 
@@ -282,16 +300,15 @@ void loop()
   if(Serial.available() > 0)  
   {
     
-    Incoming_value = Serial.read();      //Read the incoming data and store it into variable Incoming_value
-    //Serial.print(Incoming_value);        //Print Value of Incoming_value in Serial monitor
-    //Serial.print("\n");        //New line 
+    Incoming_value = Serial.read();   
+    
     if(Incoming_value == 'c')            //Checks whether value of Incoming_value is equal to c 
   {
     call++;
     display.clearDisplay();
     display.setTextSize(1);
     display.setTextColor(WHITE);
-    display.setCursor(35, 25);// Display static text
+    display.setCursor(35, 25);
     display.setTextSize(1);
     display.print(call);
     display.println(" X CALL");
@@ -307,7 +324,7 @@ void loop()
       display.clearDisplay();
       display.setTextSize(1);
       display.setTextColor(WHITE);
-      display.setCursor(20, 20);// Display static text
+      display.setCursor(20, 20);
       display.setTextSize(1);
       display.print(whatsapp);
       display.println(" X WHATSAPP");
@@ -322,7 +339,7 @@ void loop()
       display.clearDisplay();
       display.setTextSize(1);
       display.setTextColor(WHITE);
-      display.setCursor(20, 20);// Display static text
+      display.setCursor(20, 20);
       display.setTextSize(1);
       display.print(msg);
       display.println(" X MESSAGE");
@@ -335,7 +352,45 @@ void loop()
  
  if (digitalRead(Pin1) == HIGH)  //if home button (Pin1) is pressed then it will show date and time
  {
- showtime();
+  // for rectangle
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setTextColor(BLACK,WHITE);
+  display.setCursor(20,0);
+  display.println("MARS Smartwatch");
+  display.drawRoundRect(2, 12, 126, 52, 8, WHITE);
+  DateTime now = rtc.now();  
+  //Date
+  
+  display.setTextColor(WHITE);
+  display.setTextSize(1);
+  display.setCursor(8,15);
+  display.print(daysOfTheWeek[now.dayOfTheWeek()]);
+    display.setTextSize(1);
+    display.setCursor(8,29);
+    display.print(now.day());
+    display.print("/");
+    display.print(now.month());
+    display.print("/");
+    display.setTextSize(1);
+    display.setCursor(44,29);
+    display.print(now.year(), DEC);
+    
+  //Time 
+  thisSec = now.second();
+  thisMin = now.minute();
+  thisHour = now.hour();
+    display.setTextSize(2);
+    display.setCursor(8,44);
+    display.print(now.hour());
+    display.print(":");
+    display.print(now.minute());
+    display.print(":");
+    display.print(now.second());
+  display.display(); 
+  delay(3000);
+  display.clearDisplay();
+  display.display(); 
  }
 
  if (digitalRead(Pin2)== HIGH && option == 0)    //if menu button (Pin 2) is pressed then it will open the menu
@@ -368,12 +423,12 @@ if (digitalRead(Pin2)== HIGH && option == 3 )
       display.clearDisplay();
       alarm();
   }
-if (sethr == thisHour || setmin == thisMin)
+if (sethr == thisHour && setmin == thisMin)
 {
     display.clearDisplay();
     display.setTextSize(1);
     display.setTextColor(WHITE);
-    display.setCursor(35, 20);// Display static text
+    display.setCursor(35, 20);
     display.setTextSize(1);
     display.print(call);
     display.println("Wake Up");
