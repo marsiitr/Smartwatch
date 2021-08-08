@@ -114,11 +114,11 @@ The battery characteristics to be monitored include the detection of battery typ
    -	Higher power to size ratio
    
 ## How to simulate smartwatch in proteus
-  - Install proteus and arduino IDE and all the required libraries.
-  - Make the arrangement of all component according to the schematic.
-  - Copy the code kept in src folder to the arduino and compile it.
-  - Now copy the hex file location after compiling and paste it in edit component of arduino nano in Proteus.
-  - Now run the simulation.
+ 1. Install proteus and arduino IDE and all the required libraries.
+ 2. Download the proteus file from [Design/Proteus](https://github.com/crooknish/Smartwatch/blob/f79018e506b94fad1035905c33134149f3532ffa/Design/Proteus/MaRs_Smartwatch_nano.pdsprj).
+ 3. Download the Arduino code from [src](https://github.com/crooknish/Smartwatch/blob/f79018e506b94fad1035905c33134149f3532ffa/src/smartwatch_arduino_nano.ino) and compile it in Arduino IDE.
+ 4. Now copy the hex file location after compiling and paste it in edit component of arduino nano in Proteus.
+ 5. Now run the simulation.
 
 ## Cost Structure
 | Components  | Cost (in Rupees) |
